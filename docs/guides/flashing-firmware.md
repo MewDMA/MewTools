@@ -10,13 +10,13 @@ Keep the MAIN PC on the whole time and don't touch the cables while it writes.
 
 2. MewTools shows the file name, its SHA-256, and three green checks: the file's chip, your card's chip, and the package. If anything is red, it tells you why and won't flash.
 
-   ![Firmware check](../screenshots/firmware-review.png)
+3. Click **Flash** (2) and confirm. It takes about a minute. Don't unplug anything.
 
-3. Click **Flash** and confirm. It takes about a minute. Don't unplug anything.
+   ![Flash the firmware](../screenshots/firmware-review-steps.png)
 
-4. When it's done, fully shut the MAIN PC down (Start, Power, Shut down, not restart), wait for the timer, then turn it back on.
+4. When it's done, fully shut the MAIN PC down (Start, Power, Shut down, not restart), then click **The main PC is off, start the timer** (3) and wait for the ring to hit zero.
 
-   ![Shut down and wait](../screenshots/firmware-timer.png)
+   ![Shut down the main PC, then start the timer](../screenshots/firmware-power-cycle-steps.png)
 
 5. Turn the main PC back on and check the card again.
 

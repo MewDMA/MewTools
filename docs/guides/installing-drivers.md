@@ -6,9 +6,9 @@ MewTools installs the card and MAKCU drivers for you, straight from the official
 
 1. Open **Drivers**. Each driver shows a green dot if it's installed, red if it's missing.
 
-   ![Drivers](../screenshots/drivers.png)
+2. Click **Install** (1) next to any red one. It downloads and installs on its own. Click **Reinstall** if you're fixing a driver problem.
 
-2. Click **Install** next to any red one. It downloads and installs on its own. Click **Reinstall** if you're fixing a driver problem.
+   ![Install a driver](../screenshots/drivers-steps.png)
 
 3. What each one is for:
    - **FTDI D3XX** is the card's data port (FT601).

@@ -8,11 +8,13 @@ Your DNA ID is your card's unique number. We need it (plus the msinfo32 file fro
 
    ![Card check](../screenshots/card-check.png)
 
-2. In the **Chip** box click **Read chip**. It should show your card's size (35T, 75T or 100T).
+2. In the **Chip** box click **Read chip** (1). It should show your card's size (35T, 75T or 100T).
 
-3. In the **DNA ID** box click **Read DNA ID**, then **Copy DNA ID**.
+3. In the **DNA ID** box click **Read DNA ID** (2), then **Copy DNA ID** (3).
 
-   ![Read and copy the DNA ID](../screenshots/card-dna-copy.png)
+   ![Read the chip, read the DNA ID, copy it](../screenshots/card-dna-copy-steps.png)
+
+   The red numbers in the picture match the three clicks above.
 
 4. Click **How to send it to us** and follow the short guide to paste it into your order at mewdma.net.
 
