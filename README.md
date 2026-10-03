@@ -103,6 +103,7 @@ Every error has a code like MT-101 with the fix. Full list at <a href="https://m
 
 </div>
 
+
 <!-- mewtools-guides -->
 ## Guides
 
@@ -113,3 +114,7 @@ Step by step guides, with screenshots, are in [docs/guides](docs/guides):
 - [Flashing firmware](docs/guides/flashing-firmware.md)
 - [Flashing MAKCU](docs/guides/flashing-makcu.md)
 - [Setting up a fresh second PC](docs/guides/fresh-second-pc.md)
+- [Speed test ratings](docs/guides/speed-test-ratings.md)
+- [Fixing a COM port 10 or higher](docs/guides/fixing-a-high-com-port.md)
+- [Sending a Something's wrong report](docs/guides/sending-a-report-in-a-ticket.md)
+- [Using the Windows Update and Defender pages safely](docs/guides/windows-update-and-defender.md)
