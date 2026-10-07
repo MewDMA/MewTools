@@ -1,23 +1,23 @@
 # MewTools security
 
-MewTools runs as administrator on the second PC, so it is built to keep that trust narrow. This page describes how the app handles commands, downloads, updates and files, what was checked in a security review, and what was hardened as a result. It contains no secrets.
+MewTools runs as administrator on your second PC, so we keep what it can do pretty narrow. This page covers how it handles commands, downloads, updates and files, and what we changed after a security review. There are no secrets in here.
 
 ## Running commands
 
-- Every external program is launched with an **argument list**, never a shell string. File names, COM ports, device ids and URLs are passed as separate arguments, so they cannot break out into a command. No console window is opened, and child processes are killed if the app drops them.
-- PowerShell is run with `-EncodedCommand` (a base64 UTF-16 script) or `-File` against a bundled script, so the script text is never parsed by a shell. Any value placed into a PowerShell snippet is single-quote escaped first.
-- The bundled PowerShell scripts are hashed at build time and checked at startup, so a changed script is caught.
+- Every outside program gets an **argument list**, never a shell string. File names, COM ports, device ids and URLs go in as separate arguments, so they can't turn into a command. No console window opens, and child processes are killed if the app drops them.
+- PowerShell runs with `-EncodedCommand` (a base64 UTF-16 script) or `-File` on a bundled script, so no shell ever parses the script text. Any value we put into a PowerShell snippet is single-quote escaped first.
+- The bundled PowerShell scripts are hashed at build time and checked on every start, so a changed script gets caught.
 
 ## Downloads
 
-- All downloads are **HTTPS only**. The HTTP client refuses to downgrade to plain HTTP.
-- Redirects are only followed to an **allowlist of official hosts**. A redirect to any other host is an error.
-- Every file that is **run or installed is verified before it runs**: by a published SHA-256 (GitHub release assets), by a vendor Authenticode signature (drivers, FTDI's library, Microsoft runtimes), or by a checksum baked into the app (backup copies). Nothing is executed without a prior hash or signature check. A checksum mismatch deletes the file and fails.
-- Downloaded file names are reduced to a plain file name (no path separators, no `..`), so a download cannot escape its folder. Zip extraction is path-traversal safe.
+- Every download is **HTTPS only**, and the HTTP client won't drop down to plain HTTP.
+- Redirects only go to an **allowlist of official hosts**. A redirect anywhere else is an error.
+- Every file that gets **run or installed is verified before it runs**. That's a published SHA-256 for GitHub release assets, a vendor Authenticode signature for drivers, FTDI's library and Microsoft runtimes, or a checksum baked into the app for backup copies. Nothing runs without a hash or signature check first. If a checksum doesn't match, the file is deleted and the step fails.
+- Downloaded file names are cut down to a plain name with no path separators and no `..`, so a download can't leave its folder. Zip extraction is safe against path traversal too.
 
 ### Official hosts
 
-Downloads and version/metadata checks only ever contact:
+Downloads and version or metadata checks only ever talk to these:
 
 - `ftdichip.com` (FTDI D3XX driver and FTD3XX library)
 - `wch-ic.com` (WCH CH347 and CH343 drivers)
@@ -25,44 +25,44 @@ Downloads and version/metadata checks only ever contact:
 - `microsoft.com` and `aka.ms` (Visual C++ redistributables, DirectX, .NET, WebView2)
 - `mewdma.net` (MewDMA backup copies)
 
-Links opened in the browser are limited to a separate allowlist (the above plus GPU vendor and tool sites such as nvidia.com, amd.com, intel.com, techpowerup.com and makcu.com). The app never downloads from the browser-only sites. System pages are limited to `ms-settings:` and `windowsdefender:`.
+Links that open in your browser have their own allowlist. That's the hosts above plus GPU vendor and tool sites like nvidia.com, amd.com, intel.com, techpowerup.com and makcu.com. The app never downloads from those browser-only sites. System pages are limited to `ms-settings:` and `windowsdefender:`.
 
 ## Firmware and MAKCU flashing
 
-- The firmware or MAKCU file is chosen in the native file picker and passed to openFPGALoader or esptool as a plain argument. The file name never reaches a shell.
-- The file contents are validated before flashing: a firmware file must be a real bitstream whose chip and package match the card that is connected; a MAKCU file must have the expected device magic.
+- You pick the firmware or MAKCU file in the normal Windows file picker. It goes to openFPGALoader or esptool as a plain argument and never touches a shell.
+- We check the file before flashing. A firmware file has to be a real bitstream whose chip and package match the connected card, and a MAKCU file has to have the right device magic.
 
 ## Updates
 
-- Updates use Tauri's updater with a **signed update file**. The matching public key is built into the app.
-- The app checks the MewDMA/MewTools releases feed on start and once a day. An update is **downloaded and verified against the public key before anything is installed**, so a fake or tampered update cannot run.
-- If a download or verification fails, nothing is applied and the installed version keeps working. The signing private key exists only as a CI secret and is never in the repository or the installer.
+- Updates use Tauri's updater with a **signed update file**, and the matching public key is built into the app.
+- The app checks the MewDMA/MewTools releases feed on start and once a day. An update is **downloaded and verified against the public key before anything is installed**, so a fake or tampered update can't run.
+- If a download or check fails, nothing gets applied and your current version keeps working. The private signing key only exists as a CI secret, never in the repo or the installer.
 
 ## App sandboxing
 
-- The webview loads only the bundled local frontend. No remote content is loaded into the app, and the webview makes no outbound network requests of its own; all network access happens in the Rust backend.
-- A strict Content Security Policy is set: scripts and connections default to the app itself, with no inline scripts and no remote origins.
-- The frontend is granted a **minimal capability set** (file open/save dialogs, opening allowlisted links, the updater, and app restart). Everything privileged goes through explicit, reviewed backend commands rather than a broad shell or filesystem capability.
+- The webview only loads the bundled local frontend. Nothing remote gets loaded into the app and the webview makes no network requests itself, because all network stuff happens in the Rust backend.
+- We set a strict Content Security Policy. Scripts and connections default to the app itself, with no inline scripts and no remote origins.
+- The frontend only gets a **minimal capability set**: file open and save dialogs, opening allowlisted links, the updater and app restart. Anything privileged goes through specific backend commands we reviewed, not a broad shell or filesystem capability.
 
 ## File and system changes
 
-- The app writes under `%ProgramData%\MewTools` (its state, tool packs and downloads) and to files the user explicitly chooses in a Save dialog. Report exports refuse to write into Windows system folders.
-- The `%ProgramData%\MewTools` folder is locked so only Administrators and SYSTEM can write to it, which prevents a standard user from swapping a bundled tool or planting a DLL that the elevated app would load.
-- Optimizer tweaks change the registry, services, scheduled tasks and power settings. Every change records the previous value first and can be undone, and the app never creates a service entry for a service that is not present. A restore point is made before applying tweaks.
+- The app writes under `%ProgramData%\MewTools` (its state, tool packs and downloads) and to files you pick yourself in a Save dialog. Report exports won't write into Windows system folders.
+- `%ProgramData%\MewTools` is locked so only Administrators and SYSTEM can write to it. That stops a standard user from swapping a bundled tool or planting a DLL the elevated app would load.
+- Optimizer tweaks change the registry, services, scheduled tasks and power settings. Every change saves the old value first and can be undone, and the app never creates a service entry for a service that isn't there. We make a restore point before applying tweaks.
 
 ## Review and hardening
 
-A security review covered command execution, downloads, the flash paths, the update check, the Tauri configuration and capabilities, file writes, and a repository secret scan. The app was already passing values as argument lists, verifying every executed download, and running a locked-down webview. The following defense-in-depth changes were made after the review:
+The security review covered command execution, downloads, the flash paths, the update check, the Tauri config and capabilities, file writes and a secret scan of the repo. The app already passed values as argument lists, verified every download it runs and used a locked-down webview. We still added these extra layers after the review:
 
-- Redirects are now restricted to the official host allowlist instead of following any HTTPS redirect.
-- Downloaded file names are validated so they cannot contain path separators.
+- Redirects now stick to the official host allowlist instead of following any HTTPS redirect.
+- Downloaded file names are checked so they can't contain path separators.
 - `%ProgramData%\MewTools` is locked to Administrators and SYSTEM for writing.
 - Report export refuses Windows system folders.
 
 ## Dependencies
 
-Rust and npm dependencies are checked for known advisories (`cargo audit` and `npm audit`) and updated when something is flagged.
+We check Rust and npm dependencies for known advisories with `cargo audit` and `npm audit`, and update them when something gets flagged.
 
 ## Reporting
 
-Found something? Email support@mewdma.net. Please do not open a public issue for a security report.
+Found something? Email support@mewdma.net, and please don't open a public issue for a security report.
