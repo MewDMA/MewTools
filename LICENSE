@@ -1,0 +1,12 @@
+Copyright (c) 2026 MewDMA. All rights reserved.
+
+MewTools, its installer, its source code, its images and its documentation belong to MewDMA.
+You may download and use the released installer for your own setup. You may not copy,
+modify, redistribute, sell, sublicense or reverse engineer MewTools or any part of it
+without written permission from MewDMA.
+
+Third-party tools that MewTools downloads or bundles (such as openFPGALoader, PCILeech,
+esptool and the FTDI, WCH and Silicon Labs drivers) keep their own licenses.
+
+MewTools is provided as is, without any warranty. MewDMA is not liable for any damage
+that comes from using it.
