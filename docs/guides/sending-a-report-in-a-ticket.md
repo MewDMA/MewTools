@@ -9,7 +9,7 @@ The report from the **Something's wrong** page is honestly the fastest way for u
 1. Open **Something's wrong** and click **Check everything**. It takes a few seconds.
 2. Read the rows if you like. Green is fine, amber is a heads up and red is a problem. Each red one links to a guide.
 3. Click **Copy summary** (1) and the whole report goes to your clipboard.
-4. Open your ticket at mewdma.net and paste it in (Ctrl+V). Add a line about what you were doing when it went wrong.
+4. Open a ticket in our Discord and paste it in (Ctrl+V). Add a line about what you were doing when it went wrong.
 
 ## What's in the report
 - Card chip and DNA ID read result
