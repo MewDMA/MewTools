@@ -114,20 +114,21 @@ Every error has a code like MT-101 with the fix. Full list at <a href="https://m
 
 
 
+
 <!-- mewtools-guides -->
 ## Guides
 
-Step by step guides, with screenshots, are in [docs/guides](docs/guides):
+Our step by step guides with pictures are on mewdma.net:
 
-- [Getting your DNA ID](docs/guides/getting-your-dna-id.md)
-- [DNA ID and msinfo32](docs/guides/dna-id-and-msinfo32.md)
-- [Installing drivers](docs/guides/installing-drivers.md)
-- [Flashing firmware](docs/guides/flashing-firmware.md)
-- [Flashing MAKCU](docs/guides/flashing-makcu.md)
-- [Setting up a fresh second PC](docs/guides/fresh-second-pc.md)
-- [Speed test ratings](docs/guides/speed-test-ratings.md)
-- [Fixing a COM port 10 or higher](docs/guides/fixing-a-high-com-port.md)
-- [Sending a Something's wrong report](docs/guides/sending-a-report-in-a-ticket.md)
-- [Using the Windows Update and Defender pages safely](docs/guides/windows-update-and-defender.md)
+- [Getting your DNA ID](https://mewdma.net/guides/dna-id-and-msinfo32#h-your-dna-id)
+- [DNA ID and msinfo32](https://mewdma.net/guides/dna-id-and-msinfo32)
+- [Installing drivers](https://mewdma.net/guides/installing-drivers-with-mewtools)
+- [Flashing firmware](https://mewdma.net/guides/flashing-your-firmware)
+- [Flashing MAKCU](https://mewdma.net/guides/updating-makcu-to-v4)
+- [Setting up a fresh second PC](https://mewdma.net/guides/second-pc-setup#h-fresh-windows-setup-pack-and-optimizer)
+- [Speed test ratings](https://mewdma.net/guides/healthy-dma-speed-test)
+- [Fixing a COM port 10 or higher](https://mewdma.net/guides/fix-com-port-10-or-higher)
+- [Sending a Something's wrong report](https://mewdma.net/guides/send-a-mewtools-report)
+- [Using the Windows Update and Defender pages safely](https://mewdma.net/guides/mewtools-windows-update-and-defender)
 
 How MewTools handles security: [docs/security.md](docs/security.md).
