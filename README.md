@@ -3,7 +3,7 @@
 <a href="https://mewdma.net/tools"><img src="banner.png" alt="MewTools by MewDMA" width="100%"></a>
 
 **Free Windows app for setting up and fixing your DMA card.**<br>
-Made by <a href="https://mewdma.net">MewDMA</a>, works with any 35T, 75T or 100T card, not just ours.
+Made by <a href="https://mewdma.net">MewDMA</a>, works with any 75T or 100T card, not just ours.
 
 <a href="https://github.com/MewDMA/MewTools/releases/latest"><img src="https://img.shields.io/badge/Download-Latest-f472b6?style=for-the-badge&logo=windows&logoColor=white&labelColor=0a0a12" alt="Download"></a>
 <a href="https://github.com/MewDMA/MewTools/releases"><img src="https://img.shields.io/github/v/release/MewDMA/MewTools?style=for-the-badge&label=Version&color=a78bfa&labelColor=0a0a12" alt="Version"></a>
@@ -102,6 +102,7 @@ Every error has a code like MT-101 with the fix. Full list at <a href="https://m
 **Need help?** Check the <a href="https://mewdma.net/tools">error code guides</a>, ask on the <a href="https://mewdma.net/forum">forum</a> or open a ticket in our <a href="https://discord.gg/mewdma">Discord</a>.
 
 </div>
+
 
 
 
