@@ -7,7 +7,7 @@ Made by <a href="https://mewdma.net">MewDMA</a>, works with any 75T or 100T card
 
 <a href="https://github.com/MewDMA/MewTools/releases/latest"><img src="https://img.shields.io/badge/Download-Latest-f472b6?style=for-the-badge&logo=windows&logoColor=white&labelColor=0a0a12" alt="Download"></a>
 <a href="https://github.com/MewDMA/MewTools/releases"><img src="https://img.shields.io/github/v/release/MewDMA/MewTools?style=for-the-badge&label=Version&color=a78bfa&labelColor=0a0a12" alt="Version"></a>
-<a href="https://github.com/MewDMA/MewTools/releases"><img src="https://img.shields.io/github/downloads/MewDMA/MewTools/total?style=for-the-badge&label=Downloads&color=a78bfa&labelColor=0a0a12" alt="Downloads"></a>
+<a href="https://github.com/MewDMA/MewTools/releases"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FMewDMA%2FMewTools%2Fbadge%2Fdownloads.json&style=for-the-badge" alt="Downloads"></a>
 <a href="https://discord.gg/mewdma"><img src="https://img.shields.io/badge/Discord-Help-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=0a0a12" alt="Discord"></a>
 
 </div>
