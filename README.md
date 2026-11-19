@@ -101,6 +101,8 @@ Every error has a code like MT-101 with the fix. Full list at <a href="https://m
 
 **Need help?** Check the <a href="https://mewdma.net/tools">error code guides</a>, ask on the <a href="https://mewdma.net/forum">forum</a> or open a ticket in our <a href="https://discord.gg/mewdma">Discord</a>.
 
+Short versions of our guides are also on our <a href="https://mewdma-1.gitbook.io/dma-guides/">GitBook</a>.
+
 </div>
 
 
