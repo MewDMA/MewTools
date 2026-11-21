@@ -4,9 +4,9 @@
 
 </div>
 
-# MewTools
+# MewTools, the free DMA card app for your second PC
 
-MewTools is a free Windows app made by [MewDMA](https://mewdma.net) for people who use a DMA card with a second PC. You install it on the SECOND PC (Windows 10 or 11, 64 bit), and it checks your card, reads the DNA ID, runs a speed test, installs the drivers, flashes your firmware and tests MAKCU, FERRUM and KMBox aim devices. It works with any 75T or 100T FPGA DMA card and you can [download the latest version here](https://github.com/MewDMA/MewTools/releases/latest).
+MewTools is a free Windows app made by [MewDMA](https://mewdma.net) for people who use a DMA card with a second PC. You install it on the SECOND PC, and it checks your card, reads the DNA ID, runs a speed test, installs the drivers, flashes your firmware and tests MAKCU, FERRUM and KMBox aim devices. It works with any 75T or 100T FPGA DMA card and you can [download the latest version here](https://github.com/MewDMA/MewTools/releases/latest).
 
 <div align="center">
 
@@ -17,38 +17,26 @@ MewTools is a free Windows app made by [MewDMA](https://mewdma.net) for people w
 
 </div>
 
-<table>
-<tr>
-<td width="33%" align="center" valign="top"><b>Free</b><br><sub>to download and use</sub></td>
-<td width="33%" align="center" valign="top"><b>Windows 10 and 11</b><br><sub>64 bit, on the SECOND PC</sub></td>
-<td width="33%" align="center" valign="top"><b>75T and 100T</b><br><sub>FPGA DMA cards</sub></td>
-</tr>
-<tr>
-<td width="33%" align="center" valign="top"><b>12 languages</b><br><sub>opens in your Windows language</sub></td>
-<td width="33%" align="center" valign="top"><b>Noob and Pro</b><br><sub>two modes, Noob is the default</sub></td>
-<td width="33%" align="center" valign="top"><b>Updates itself</b><br><sub>signed and checked first</sub></td>
-</tr>
-</table>
+<p align="center"><b>Windows 10 and 11, 64 bit</b> &nbsp;·&nbsp; <b>12 languages</b> &nbsp;·&nbsp; <b>Updates itself</b></p>
 
 <p align="center">
 <sub>
-<a href="#download-and-install-mewtools">Download</a> &nbsp;|&nbsp;
 <a href="#mewtools-features">Features</a> &nbsp;|&nbsp;
 <a href="#mewtools-screenshots">Screenshots</a> &nbsp;|&nbsp;
-<a href="#supported-dma-cards-and-hardware">Supported hardware</a> &nbsp;|&nbsp;
+<a href="#supported-dma-cards-and-hardware">Hardware</a> &nbsp;|&nbsp;
 <a href="#mewtools-faq">FAQ</a> &nbsp;|&nbsp;
-<a href="#guides-and-support">Guides and support</a>
+<a href="#guides-and-support">Guides</a>
 </sub>
 </p>
 
 ## Download and install MewTools
 
 1. Grab `MewTools-Setup-<version>.exe` from the [latest release](https://github.com/MewDMA/MewTools/releases/latest). It's a normal Windows installer, and the release also has a `SHA256SUMS.txt` if you want to check the file.
-2. Run it on your SECOND PC.
+2. Run it and follow the installer.
 3. Open MewTools. It asks for admin because installing drivers, flashing and changing Windows settings all need it.
 
 > [!IMPORTANT]
-> MewTools only goes on the SECOND PC, so you don't put it on the MAIN PC. After the first install, MewTools updates itself.
+> MewTools only goes on the SECOND PC, the one your card's USB cables plug into, so you don't put it on the MAIN PC.
 
 > [!NOTE]
 > If Windows says "Windows protected your PC", click **More info** and then **Run anyway**. That shows up because the installer isn't code signed yet.
@@ -59,7 +47,7 @@ MewTools is a free Windows app made by [MewDMA](https://mewdma.net) for people w
 <tr>
 <td width="50%" valign="top">
 
-### 🔍 Check your DMA card, DNA ID and speed test
+### 🔍 Check your DMA card and DNA ID
 
 Card Check reads the chip size, IDCODE and DNA ID, and the speed test rates your card.
 
@@ -75,14 +63,14 @@ Flashes `.bin` and `.bit` firmware over JTAG, then reads the card back to make s
 <tr>
 <td width="50%" valign="top">
 
-### 🔧 Install DMA card and aim device drivers
+### 🔌 Install DMA card drivers
 
-FTDI, WCH and Silicon Labs drivers from the vendors' own sites, each checked before it runs.
+FTDI, WCH and Silicon Labs drivers for your card and aim device, each checked before it runs.
 
 </td>
 <td width="50%" valign="top">
 
-### 🩺 Fix DMA card problems
+### 🛠️ Fix DMA card problems
 
 Something's Wrong checks your setup and fixes what it can, and every error has a short code with its fix.
 
@@ -91,14 +79,14 @@ Something's Wrong checks your setup and fixes what it can, and every error has a
 <tr>
 <td width="50%" valign="top">
 
-### 🎯 Test aim devices (MAKCU, FERRUM, KMBox)
+### 🎯 Test MAKCU, FERRUM and KMBox
 
-Move, click and mouse input tests for MAKCU, FERRUM and KMBox, Medius firmware included.
+Move, click and mouse input tests for your aim device, and MAKCU boards on Medius firmware work too.
 
 </td>
 <td width="50%" valign="top">
 
-### 📤 Upload your card info to a MewDMA order
+### 📤 Send your card info to MewDMA
 
 Link your mewdma.net account and MewTools sends your card info to your order for you.
 
@@ -114,9 +102,9 @@ Setup Pack installs missing runtimes from Microsoft, and the Optimizer has safe 
 </td>
 <td width="50%" valign="top">
 
-### 🌐 Languages, modes and updates
+### 🎛️ Noob and Pro mode
 
-12 languages, Noob and Pro mode, and signed updates that are checked before they install.
+Noob mode keeps it simple and runs fixes by itself. Pro mode shows every screen, more speed test options and the full error details.
 
 </td>
 </tr>
@@ -126,8 +114,6 @@ Setup Pack installs missing runtimes from Microsoft, and the Optimizer has safe 
 <summary><b>See every MewTools feature in detail</b></summary>
 
 #### Check your DMA card
-
-Card Check reads your card over the JTAG cable, and the speed test rates how fast your card reads.
 
 | Part | What it does |
 |---|---|
@@ -200,13 +186,11 @@ These screens get your DMA second PC ready, and MewTools also deletes old temp f
 | Startup Apps | Search your startup apps and turn them off one at a time or all at once. |
 | System Info | Shows this PC, your monitors, USB and network, and you can copy it or save it to a file. |
 
-#### Languages, modes and updates
+#### Languages, updates and Get Started
 
 | Part | What it does |
 |---|---|
 | Languages | 12 languages. It opens in your Windows language when it's one of them. |
-| Noob mode | The default, with fewer screens, short errors and more fixes that run by themselves. |
-| Pro mode | Shows every screen and the full error details. |
 | Updates | Automatic updates that are signed by us and checked before they install. |
 | Get Started | A checklist on Home that ticks off each step of your setup. |
 
@@ -216,14 +200,12 @@ These screens get your DMA second PC ready, and MewTools also deletes old temp f
 
 <table>
 <tr>
-<td width="33%" valign="top" align="center"><sub>Home with the Get Started checklist</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/home.png" alt="MewTools home screen with the Get Started checklist"></td>
-<td width="33%" valign="top" align="center"><sub>Speed test and its rating</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/card-speed.png" alt="MewTools DMA card speed test with its rating"></td>
-<td width="33%" valign="top" align="center"><sub>Aim Devices for MAKCU, FERRUM and KMBox</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/makcu.png" alt="MewTools Aim Devices screen for MAKCU, FERRUM and KMBox"></td>
+<td width="50%" valign="top" align="center"><sub>Home with Get Started</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/home.png" alt="MewTools home screen with the Get Started checklist for setting up a DMA second PC"></td>
+<td width="50%" valign="top" align="center"><sub>Card Check and speed test</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/card-speed.png" alt="MewTools Card Check showing the DMA card's chip size, IDCODE, DNA ID and an Excellent speed test rating"></td>
 </tr>
 <tr>
-<td width="33%" valign="top" align="center"><sub>Card Check with chip size, IDCODE and DNA ID</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/card-check.png" alt="MewTools Card Check showing the DMA card's chip size, IDCODE and DNA ID"></td>
-<td width="33%" valign="top" align="center"><sub>Firmware flasher</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/firmware.png" alt="MewTools firmware flasher for DMA cards"></td>
-<td width="33%" valign="top" align="center"><sub>Something's Wrong check</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/doctor.png" alt="MewTools Something's Wrong check"></td>
+<td width="50%" valign="top" align="center"><sub>Firmware flasher</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/firmware-review.png" alt="MewTools firmware flasher with a 100T firmware file checked against the DMA card's chip"></td>
+<td width="50%" valign="top" align="center"><sub>Something's Wrong check</sub><br><img src="https://raw.githubusercontent.com/MewDMA/MewTools/main/docs/screenshots/doctor-report.png" alt="MewTools Something's Wrong check showing a found problem, its MT error code and a Fix it button"></td>
 </tr>
 </table>
 
@@ -231,31 +213,12 @@ These screens get your DMA second PC ready, and MewTools also deletes old temp f
 
 | Part | What works |
 |---|---|
-| DMA card chip | Xilinx Artix-7 FPGA, in 75T and 100T cards |
-| Data port | FTDI FT601 (D3XX driver) |
-| JTAG cable | WCH CH347T, WCH CH347F, FTDI FT232H, FT2232H and FT4232H |
-| Aim devices | MAKCU (including Medius firmware), FERRUM, KMBox B and KMBox compatible devices |
-| Windows | Windows 10 and 11, 64 bit |
-
-## MewTools languages
-
-English, Español, Português, Français, Deutsch, Italiano, Nederlands, Polski, Türkçe, Русский, 日本語 and 中文. Copy for ticket always stays in English so our support can read it.
+| DMA&nbsp;card | Xilinx Artix-7 FPGA, in 75T and 100T cards |
+| Data&nbsp;port | FTDI FT601 (D3XX driver) |
+| JTAG&nbsp;cable | WCH CH347T, WCH CH347F, FTDI FT232H, FT2232H and FT4232H, used to read the DNA ID and flash firmware |
+| Aim&nbsp;devices | MAKCU (including Medius firmware), FERRUM, KMBox B and KMBox compatible devices |
 
 ## MewTools FAQ
-
-<details>
-<summary><b>What is MewTools?</b></summary>
-
-MewTools is a free Windows app from MewDMA for setting up and fixing a DMA card on your second PC. It checks the card, reads the DNA ID, runs a speed test, installs drivers, flashes firmware and tests aim devices like MAKCU and FERRUM.
-
-</details>
-
-<details>
-<summary><b>Is MewTools free?</b></summary>
-
-Yes, MewTools is free to download and use. You get it from the [MewDMA/MewTools releases page](https://github.com/MewDMA/MewTools/releases/latest) on GitHub.
-
-</details>
 
 <details>
 <summary><b>Do I need to be a MewDMA customer to use MewTools?</b></summary>
@@ -267,7 +230,7 @@ No, MewTools works with any 75T or 100T FPGA DMA card. Linking a mewdma.net acco
 <details>
 <summary><b>Which DMA cards and JTAG cables does MewTools support?</b></summary>
 
-MewTools works with Xilinx Artix-7 FPGA DMA cards in 75T and 100T sizes that use an FTDI FT601 data port. To read the DNA ID or flash firmware, the card's JTAG port needs a WCH CH347T or CH347F chip, or an FTDI FT232H, FT2232H or FT4232H chip.
+Any Xilinx Artix-7 FPGA DMA card in 75T or 100T size with an FTDI FT601 data port works, and the JTAG cables and aim devices are listed under [Supported DMA cards and hardware](#supported-dma-cards-and-hardware).
 
 </details>
 
@@ -288,7 +251,7 @@ Plug the card's firmware cable into the SECOND PC with the MAIN PC on, open Firm
 <details>
 <summary><b>What does the MewTools speed test number mean?</b></summary>
 
-The MewTools speed test shows two numbers, and both need the card on a USB 3 port to get a rating. Speed is how many small 4 KB reads a second your card gets from the MAIN PC's memory: under 3,800 is Slow, from 3,800 is Good, from 4,800 is Fast and 6,000 or more is Excellent. Throughput is big reads in MB/s: under 80 is Slow, from 80 is OK, from 140 is Good and 185 or more is Great.
+The MewTools speed test shows two numbers, and both need the card on a USB 3 port to get a rating. Speed is how many small 4 KB reads a second your card gets from the MAIN PC's memory, and Throughput is how fast big reads go in MB/s. This is where each rating starts.
 
 | Speed (4 KB reads a second) | Throughput (MB/s) |
 |---|---|
@@ -331,7 +294,7 @@ MewTools runs as admin because drivers, flashing and Windows settings need it. I
 <details>
 <summary><b>Which languages does MewTools support?</b></summary>
 
-MewTools speaks English, Spanish, Portuguese, French, German, Italian, Dutch, Polish, Turkish, Russian, Japanese and Chinese. It opens in your Windows language when it's one of these, and you can change it in Updates and About.
+MewTools speaks English, Spanish (Español), Portuguese (Português), French (Français), German (Deutsch), Italian (Italiano), Dutch (Nederlands), Polish (Polski), Turkish (Türkçe), Russian (Русский), Japanese (日本語) and Chinese (中文). It opens in your Windows language when it's one of these, and you can change it in Updates and About. Copy for ticket always stays in English so our support can read it.
 
 </details>
 
@@ -361,29 +324,13 @@ Windows SmartScreen shows that message because the MewTools installer isn't code
 > [!TIP]
 > If you get stuck, click Copy for ticket in MewTools and open a ticket in our [Discord](https://discord.gg/mewdma), then paste the details in.
 
-- All our step by step guides are at [mewdma.net/guides](https://mewdma.net/guides), and short versions are on our [GitBook](https://mewdma-1.gitbook.io/dma-guides/).
-- Each error code in the app links to its own fix on mewdma.net/guides.
-- What changed in each version is in [CHANGELOG.md](CHANGELOG.md).
+All our guides are at [mewdma.net/guides](https://mewdma.net/guides) and short versions are on our [GitBook](https://mewdma-1.gitbook.io/dma-guides/). Each error code in the app links to its own fix there, and what changed in each version is in [CHANGELOG.md](CHANGELOG.md).
 
-## About MewTools
-
-MewTools is made by [MewDMA](https://mewdma.net). It's free, and you can grab the newest version from the [latest release](https://github.com/MewDMA/MewTools/releases/latest) any time.
-
-<div align="center">
-
-<a href="https://github.com/MewDMA/MewTools/releases/latest"><img src="https://img.shields.io/badge/Download-Latest-f472b6?style=for-the-badge&logo=windows&logoColor=white&labelColor=0a0a12" alt="Download MewTools"></a>
-<a href="https://discord.gg/mewdma"><img src="https://img.shields.io/badge/Discord-Help-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=0a0a12" alt="MewDMA Discord"></a>
-
-</div>
+Step by step guides with pictures:
 
 
 <!-- mewtools-guides -->
-## Guides
-
-Our step by step guides with pictures are on mewdma.net:
-
-- [Getting your DNA ID](https://mewdma.net/guides/dna-id-and-msinfo32#h-your-dna-id)
-- [DNA ID and msinfo32](https://mewdma.net/guides/dna-id-and-msinfo32)
+- [Getting your DNA ID and msinfo32](https://mewdma.net/guides/dna-id-and-msinfo32)
 - [Installing drivers](https://mewdma.net/guides/installing-drivers-with-mewtools)
 - [Flashing firmware](https://mewdma.net/guides/flashing-your-firmware)
 - [Flashing MAKCU](https://mewdma.net/guides/updating-makcu-to-v4)
