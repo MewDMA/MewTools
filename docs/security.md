@@ -4,7 +4,7 @@ MewTools runs as admin on your second PC, because installing drivers, flashing a
 
 ## Running other tools
 
-Some jobs get done by other tools, like openFPGALoader for flashing or PowerShell for Windows settings. When the app starts one of them, it hands over things like file names, COM ports and links as plain values and never types them into a command prompt, so a weird file name can't turn into a command. You won't see a console window pop up, and once the app is done with a tool it closes it.
+Some jobs get done by other tools, like OpenOCD for flashing or PowerShell for Windows settings. When the app starts one of them, it hands over things like file names, COM ports and links as plain values and never types them into a command prompt, so a weird file name can't turn into a command. You won't see a console window pop up, and once the app is done with a tool it closes it.
 
 PowerShell scripts either get passed in encoded or run from a file that comes with the app, and any value we put into a script gets cleaned up first. We save a fingerprint of every script that comes with the app when we build it, and the app checks them every time it starts, so if one gets changed the app knows.
 
@@ -33,7 +33,7 @@ Links that open in your browser have their own list, which is the sites above pl
 
 ## Flashing firmware and MAKCU
 
-You pick the firmware file yourself in the normal Windows file picker, and it gets handed to openFPGALoader or esptool the same safe way as above. We check the file before anything gets flashed. Card firmware has to be real firmware for the chip and package on your card, and a MAKCU file has to start the way real MAKCU firmware does.
+You pick the firmware file yourself in the normal Windows file picker. We check that it is made for the card's chip, stage the exact checked bytes under a plain path, and hand that path to OpenOCD. OpenOCD must report that the flash contents match the file before the app says the flash worked. MAKCU firmware updates use the maker's official Toolkit or migration page. The unused generic ESP32 flasher was removed because an ESP32 image header cannot establish the board or USB-side compatibility.
 
 ## Updates
 
@@ -63,6 +63,18 @@ Redirects can now only go to the official sites on our list, where before any HT
 ## Dependencies
 
 We run `cargo audit` and `npm audit` to check the Rust and npm packages we use for known security problems, and we update anything that gets flagged.
+
+## Error reports
+
+When MewTools shows an error, it sends that error to mewdma.net in the background, so we can see what goes wrong and fix it.
+
+Each report has the MT code, its level, message values, screen and mode, app version, Windows version, UTC time, PC ID and a report ID. When available, it also records the failed command, a known component ID, operation ID and duration, file/operation context, recent safe command outcomes, and the last completed card/driver status. Cached status is timestamped and may predate the failure; recording an error does not launch another hardware probe.
+
+The longer diagnostic retains up to 64 KiB of redacted text, with an explicit omission marker for larger logs. A compatible summary remains limited to 2,000 UTF-8 bytes. The app removes the Windows profile/user name, PC name, standalone 16-hex-digit DNA values and common credential fields before saving or sending this information. It does not collect arbitrary command arguments, account tokens, typed text, firmware contents, or hardware serials for these diagnostics. Tool errors may include file names and paths; the user profile portion is redacted.
+
+The app keeps a redacted local history and an unsent queue under `%ProgramData%\MewTools\state`, each bounded to 200 events and 16 MiB. New records are saved before waiting for an upload. An in-memory pending copy can survive a temporary disk-write failure only while the app remains open. Old servers can receive the compatible summary while the longer retained diagnostic remains in the local history; support can find its path in Copy for ticket when that file exists. The site needs the expanded schema described in `error-reports-api.md` to store and display the longer diagnostic. HTTP acceptance alone does not prove that an older server kept newly added fields.
+
+Your PC ID is at the bottom of Updates and About and in Copy for ticket. It's a SHA-256 of your motherboard's IDs (the SMBIOS UUID, maker, model and serial), so it stays the same when you reinstall Windows or MewTools and can't be turned back into those IDs. A new motherboard gets a new ID. The site gets your IP address with each report, like with any request.
 
 ## Reporting a problem
 
