@@ -203,8 +203,8 @@ Remote Support lets MewDMA support, which is Mew, our AI support bot, and MewDMA
 |---|---|
 | Off by default | Nothing connects until you turn it on in MewTools > Remote Support, and it switches itself off after 2 hours without a request. |
 | Your OK | Every session needs one Allow on the PC, and the request is denied if you don't answer in 2 minutes. |
-| Full access | After Allow, support can use the whole PC, including commands, files, the registry, the screen, mouse and keyboard, drivers, restarts and every MewTools feature, including flashing. |
-| Protected data | Browser profiles, saved passwords, chat apps, wallets, password managers, game logins and other private data stay off limits. |
+| Full access | After Allow, support can use the whole PC as admin, including commands, files, the registry, the screen, mouse and keyboard, drivers, restarts and every MewTools feature, including flashing. |
+| Protected data | MewTools' file and registry tools can't open browser profiles, saved passwords, chat apps, wallets, password managers or game logins, and MewDMA's rule is that support's commands stay out of them too. |
 | Banner | A "Mew is connected" banner stays on top with a Disconnect button that ends the whole session. |
 | Limits | A session ends after 30 minutes with nothing happening or 3 hours in total. |
 | Session log | Every session and command is written to a log on the PC that you can read, save or clear. |
@@ -318,7 +318,7 @@ MewTools runs as admin because drivers, flashing and Windows settings need it. I
 <details>
 <summary><b>What can MewDMA support do with Remote Support?</b></summary>
 
-Remote Support is off until you turn it on. When support asks to connect, MewTools shows one window on the PC, and nothing happens unless you click Allow. After that, support can use the whole PC until the session ends: run commands, see your screen, use the mouse and keyboard, move files, change the registry, install drivers, restart the PC and use every MewTools feature, including flashing your card. Browser profiles, saved passwords, chat apps, wallets, password managers and game logins stay off limits.
+Remote Support is off until you turn it on. When support asks to connect, MewTools shows one window on the PC, and nothing happens unless you click Allow. After that, support can use the whole PC until the session ends: run commands, see your screen, use the mouse and keyboard, move files, change the registry, install drivers, restart the PC and use every MewTools feature, including flashing your card. MewTools' file and registry tools can't open browser profiles, saved passwords, chat apps, wallets, password managers or game logins, and MewDMA's rule is that support's commands stay out of them too.
 
 A banner stays on top the whole time, and Disconnect ends the session right away. Sessions end after 30 minutes with nothing happening or 3 hours in total, and every session and command goes in a log you can read in MewTools. All the details, and how to turn it off for good, are in [docs/security.md](docs/security.md#remote-support).
 
