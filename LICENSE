@@ -5,8 +5,9 @@ You may download and use the released installer for your own setup. You may not 
 modify, redistribute, sell, sublicense or reverse engineer MewTools or any part of it
 without written permission from MewDMA.
 
-Third-party tools that MewTools downloads or bundles (such as openFPGALoader, PCILeech,
-esptool and the FTDI, WCH and Silicon Labs drivers) keep their own licenses.
+Third-party tools that MewTools downloads or bundles (such as OpenOCD, PCILeech, esptool
+and the FTDI, WCH and Silicon Labs drivers) and the open-source libraries built into
+MewTools keep their own licenses.
 
 MewTools is provided as is, without any warranty. MewDMA is not liable for any damage
 that comes from using it.

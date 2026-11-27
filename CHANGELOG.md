@@ -2,6 +2,19 @@
 
 All notable changes to MewTools. Newest first.
 
+## Unreleased
+
+Placeholder for the version that ships Remote Support v2. Replace this heading with `## v<version>` and fill in the full notes from the source repo's CHANGELOG.md when it's released.
+
+- Remote Support is rebuilt. It's off until you turn it on in MewTools > Remote Support, and every session needs one Allow on the PC, with 2 minutes to answer.
+- After you click Allow, MewDMA support (Mew, our AI support bot, and MewDMA staff in your ticket) can use the whole PC: run commands, see your screen, use the mouse and keyboard, move files, change the registry, install drivers, restart the PC and use every MewTools feature, including flashing your card.
+- MewTools' file and registry tools can't open browser profiles, saved passwords, chat apps, wallets, password managers or game logins, and MewDMA's rule is that support's commands stay out of them too.
+- A "Mew is connected" banner stays on top with a Disconnect button that ends the whole session. Sessions end after 30 minutes with nothing happening or 3 hours in total, and Remote Support switches itself off after 2 hours without a request.
+- Every session and command goes in a session log you can read, save or clear on the Remote Support screen.
+- Linking your mewdma.net account lets support confirm the PC is yours.
+- The old Remote Support toggle in About is gone, along with the old agent that connected without asking on the PC.
+- How it all works, and how to turn it off for good, is in [docs/security.md](docs/security.md#remote-support).
+
 ## v1.0.1
 
 Updates and fixes from real-world testing.
